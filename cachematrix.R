@@ -1,11 +1,12 @@
-## Put coinverseinverseents here that give an overall description of what Your
-## functions do
+## This is a pair of functions that cache and compute the 
+## inverse of a matrix.
 
-## Write a short coinverseinverseent describing this function
+## This function creates a matrix
+## that can cache its inverse.
 
 makeCacheMatrix <- function(x = matrix()) {
   m <- NULL
-  setmatrix <- function(y) {
+  setmatrix <- function(y) { 
     x <<- y
     m <<- NULL
   }
@@ -14,8 +15,10 @@ makeCacheMatrix <- function(x = matrix()) {
   getinverse <- function() m
   list(setmatrix = setmatrix, getmatrix = getmatrix, setinverse = setinverse, getinverse = getinverse)
 }
-## Write a short coinverseinverseent describing this function
-
+## This function computes the inverse of the
+## matrix returned by `makeCacheMatrix` above. If the inverse has
+## already been calculated (and the matrix has not changed), then
+## `cacheSolve` should retrieve the inverse from the cache.
 cacheSolve <- function(x, ...) {
   m <- x$getinverse()
   if(!is.null(m)) {
